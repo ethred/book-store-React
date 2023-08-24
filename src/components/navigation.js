@@ -5,6 +5,7 @@ export default function Navigation() {
     <>
       <header className="menu">
         <div className="menu-items">
+          <h2>Logo</h2>
           <ul className="ul">
             <li>
               <Link to="/">Books</Link>
