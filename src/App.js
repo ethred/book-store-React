@@ -7,15 +7,14 @@ import Books from './components/books';
 
 function App() {
   return (
-    <>
-      <section className="bookstoresection">
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Books />} />
-          <Route path="/categories" element={<Categories />} />
-        </Routes>
-      </section>
-    </>
+    <section className="bookstoresection">
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Books />} />
+        <Route path="/categories" element={<Categories />} />
+      </Routes>
+    </section>
+
   );
 }
 
