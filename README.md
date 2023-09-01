@@ -10,6 +10,7 @@
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -61,6 +62,13 @@ To get started with the project, you will need to clone the repository (`https:/
 - GitHub: [@ethred](https://github.com/ethred)
 - Twitter: [@redwanthr](https://twitter.com/@redwanthr)
 - LinkedIn: [Redwan Tahir](https://www.linkedin.com/in/redwan-tahir-78260733/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- Fetch data from API
+- Store data to API
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
