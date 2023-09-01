@@ -7,26 +7,30 @@ export default function CreateBook() {
   const books = useSelector((state) => state.books);
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const handleAddBook = (title, author) => {
+  const [category, setCategory] = useState('action'); // Initialize with a default category
+
+  const handleAddBook = () => {
     const newBook = {
       itemId: `${books.length + 1}`,
-      title,
-      author,
-      category: 'uncategorized',
+      title: title.trim(),
+      author: author.trim(),
+      category, // Use the selected category
     };
     dispatch(addBook(newBook));
+
+    // Clear input fields and reset category after adding a book
+    setTitle('');
+    setAuthor('');
+    setCategory('action');
   };
   function handleClick(e) {
     e.preventDefault();
     if (!title || !author) return;
-    handleAddBook(title.trim(), author.trim());
-    setTitle('');
-    setAuthor('');
+    handleAddBook();
   }
 
   return (
-    <>
-   <div className="containerCreateBooks">
+    <div className="containerCreateBooks">
       <h3>ADD NEW BOOK</h3>
       <form>
         <input
@@ -41,7 +45,7 @@ export default function CreateBook() {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        <select className="select" value="action">
+        <select className="select" value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="action">Action</option>
           <option value="scienceFiction">Science Fiction</option>
           <option value="economy">Economy</option>
@@ -50,9 +54,10 @@ export default function CreateBook() {
           className="btn"
           type="submit"
           onClick={handleClick}
-        >Add Book</button>
-        </form>
-      </div>
-    </>
+        >
+          ADD BOOK
+        </button>
+      </form>
+    </div>
   );
 }

@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  // Initial state:
   books: [
     {
       itemId: 'item1',
@@ -38,5 +39,9 @@ const booksSlice = createSlice({
   },
 });
 
-export const { addBook, removeBook } = booksSlice.actions;
+const { addBook, removeBook } = booksSlice.actions;
+export {
+  addBook,
+  removeBook,
+};
 export default booksSlice.reducer;
