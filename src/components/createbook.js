@@ -1,63 +1,78 @@
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { addBook } from '../redux/books/booksSlice';
 
-export default function CreateBook() {
+const CreateBook = () => {
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.books);
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [category, setCategory] = useState('action'); // Initialize with a default category
-
-  const handleAddBook = () => {
-    const newBook = {
-      itemId: `${books.length + 1}`,
-      title: title.trim(),
-      author: author.trim(),
-      category, // Use the selected category
-    };
-    dispatch(addBook(newBook));
-
-    // Clear input fields and reset category after adding a book
-    setTitle('');
-    setAuthor('');
-    setCategory('action');
+  const initialState = {
+    title: '',
+    author: '',
+    category: '',
   };
-  function handleClick(e) {
-    e.preventDefault();
-    if (!title || !author) return;
-    handleAddBook();
-  }
+  const [bookData, setBookData] = useState(initialState);
 
+  const inputChangehandler = (e) => {
+    const { name, value } = e.target;
+    setBookData((previousData) => ({
+      ...previousData,
+      [name]: value,
+    }));
+  };
+
+  const handleAddBook = (e) => {
+    e.preventDefault();
+
+    const { title, author, category } = bookData;
+
+    if (title && author && category) {
+      const timestamp = Date.now(); // Using timestamp as a unique ID
+      const newBook = {
+        item_id: timestamp.toString(),
+        ...bookData,
+      };
+      dispatch(addBook(newBook));
+      setBookData(initialState);
+    }
+  };
   return (
     <div className="containerCreateBooks">
-      <h3>ADD NEW BOOK</h3>
       <form>
+        <h3>ADD NEW BOOK</h3>
         <input
           type="text"
+          name="title"
           placeholder="Book Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          value={bookData.title}
+          onChange={inputChangehandler}
         />
         <input
           type="text"
+          name="author"
           placeholder="Book Author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
+          value={bookData.author}
+          onChange={inputChangehandler}
         />
-        <select className="select" value={category} onChange={(e) => setCategory(e.target.value)}>
+        <select
+          className="select"
+          name="category"
+          value={bookData.category}
+          onChange={inputChangehandler}
+        >
+          <option value="">Select Category</option>
           <option value="action">Action</option>
-          <option value="scienceFiction">Science Fiction</option>
-          <option value="economy">Economy</option>
+          <option value="Science/Fiction">Science/Fiction</option>
+          <option value="Economy">Economy</option>
         </select>
         <button
           className="btn"
-          type="submit"
-          onClick={handleClick}
+          type="button"
+          onClick={handleAddBook}
         >
           ADD BOOK
         </button>
       </form>
     </div>
   );
-}
+};
+
+export default CreateBook;
