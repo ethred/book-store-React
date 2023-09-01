@@ -26,16 +26,32 @@ export default function CreateBook() {
 
   return (
     <>
-      <h1>Create Book </h1>
-      <div>
-        <input type="text" placeholder="Enter book name" />
-        <select name="auther">
-          <option value="volvo">Select books By auther</option>
-          <option value="saab">Anthony Onyekachukwu Okonta</option>
-          <option value="mercedes">Mayur Patil</option>
-          <option value="audi">Adam Boduch </option>
+   <div className="containerCreateBooks">
+      <h3>ADD NEW BOOK</h3>
+      <form>
+        <input
+          type="text"
+          placeholder="Book Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Book Author"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+        />
+        <select className="select" value="action">
+          <option value="action">Action</option>
+          <option value="scienceFiction">Science Fiction</option>
+          <option value="economy">Economy</option>
         </select>
-        <button type="submit" onClick={handleClick}>Add Book</button>
+        <button
+          className="btn"
+          type="submit"
+          onClick={handleClick}
+        >Add Book</button>
+        </form>
       </div>
     </>
   );
