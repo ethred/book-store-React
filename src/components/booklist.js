@@ -1,35 +1,15 @@
-import CreateBook from './createbook';
+import { useSelector } from 'react-redux';
 import Book from './displaybook';
 
 export default function BookList() {
-  const bookList = [
-    {
-      Id: 1,
-      bookname: 'React.js Design Patterns',
-      auther: ' Anthony Onyekachukwu Okonta ',
-    },
-    {
-      Id: 2,
-      bookname: 'React.js For Beginners',
-      auther: 'Mayur Patil',
-    },
-    {
-      Id: 3,
-      bookname: 'React and React Native',
-      auther: ' Adam Boduch ',
-    },
-  ];
+  const { books } = useSelector((state) => state.books);
   return (
     <>
-      {
-        bookList.map((book) => (
-          <div key={book.Id}>
-            <Book book={book} />
-          </div>
-        ))
-      }
-      <hr />
-      <CreateBook />
+      <div>
+        {books.map((book) => (
+          <Book key={book.itemId} book={book} />
+        ))}
+      </div>
     </>
   );
 }
