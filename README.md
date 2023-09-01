@@ -38,6 +38,8 @@ The **Books-Store React Project** is a beginner-level project that teaches you h
 
 - **Use redux store to store all states**
 - **Add React Router Dom for routing to different pages**
+- **Fetch data from API**
+- **Store data to API**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -67,8 +69,8 @@ To get started with the project, you will need to clone the repository (`https:/
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Fetch data from API
-- Store data to API
+- **UI Design**
+- **Additional Functionality**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
