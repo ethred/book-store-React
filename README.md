@@ -69,7 +69,6 @@ To get started with the project, you will need to clone the repository (`https:/
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **UI Design**
 - **Additional Functionality**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
