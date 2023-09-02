@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap");
 
 .containerCreateBooks {
-  width: 83rem;
+  width: 79rem;
   height: 100px;
   padding: 20px 0;
   margin-left: 3rem;
@@ -82,4 +82,11 @@ input {
   letter-spacing: -0.18px;
   color: #888;
   margin-left: 60px;
+}
+
+.Line {
+  width: 75rem;
+  height: 0.125rem;
+  margin: 2.5rem 0.063rem 1.813rem 7rem;
+  border: solid 1px #e8e8e8;
 }
