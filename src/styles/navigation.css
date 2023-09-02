@@ -26,8 +26,9 @@
 .nav-link {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 8px;
   margin-bottom: 4.188rem;
+  margin-left: 3.4rem;
 }
 
 .Nav-Header {

@@ -2,9 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap");
 
 .containerCreateBooks {
-  width: 88rem;
+  width: 83rem;
   height: 100px;
   padding: 20px 0;
+  margin-left: 3rem;
 }
 
 form {

@@ -45,6 +45,7 @@ const Book = () => {
               <h4 className="completed">Completed</h4>
             </div>
           </div>
+          <div className="Line-3" />
           <div className="deepRight">
             <p className="current">Current Chapter</p>
             <p className="chapter">Chapter 15</p>
