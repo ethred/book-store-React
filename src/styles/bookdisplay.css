@@ -51,7 +51,8 @@ body {
   width: 4.25rem;
   height: 4.25rem;
   border-radius: 50%;
-  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+  background:
+    radial-gradient(closest-side, white 79%, transparent 80% 100%),
     conic-gradient(#0290ff calc(var(--progress-value) * 1%), #e8e8e8 0);
   animation: progress 2s 1 forwards;
   position: relative;
