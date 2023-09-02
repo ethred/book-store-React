@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import '../styles/bookdisplay.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { getBookItems, removeBook } from '../redux/books/booksSlice';
 
@@ -15,13 +16,14 @@ const Book = () => {
     return (
       <div key={itemId} className="containerRender" style={{ display: 'flex' }}>
         <div className="renderLeft">
-          <p>{category}</p>
-          <h3>{title}</h3>
-          <p>{author}</p>
+          <p className="cat">{category}</p>
+          <h3 className="tit">{title}</h3>
+          <p className="auth">{author}</p>
           <div className="leftButton">
             <button className="leftButton" type="button">
               Comment
             </button>
+            <div className="Line-2" />
             <button
               className="leftButton"
               type="button"
@@ -29,6 +31,7 @@ const Book = () => {
             >
               Remove
             </button>
+            <div className="Line-2" />
             <button className="leftButton" type="button">
               Edit
             </button>
@@ -36,15 +39,15 @@ const Book = () => {
         </div>
         <div className="renderRight">
           <div className="middle">
-            <p className="Amid">Progress</p>
+            <p className="Amid" />
             <div className="midRight">
-              <h4>60%</h4>
-              <h4>Completed</h4>
+              <h4 className="percent">60%</h4>
+              <h4 className="completed">Completed</h4>
             </div>
           </div>
           <div className="deepRight">
-            <p>Current Chapter</p>
-            <p>Chapter 15</p>
+            <p className="current">Current Chapter</p>
+            <p className="chapter">Chapter 15</p>
             <button className="blue" type="button">
               UPDATE PROGRESS
             </button>

@@ -1,0 +1,36 @@
+.containerRender {
+  display: flex;
+  justify-content: space-between;
+  height: 160px;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.renderLeft {
+  padding: 20px;
+}
+
+.renderRight {
+  width: 55%;
+  padding: 20px;
+}
+
+.renderRight ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin-top: 15px;
+}
+
+.listTwo {
+  width: 110px;
+  padding: 0 20px;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
